@@ -5,7 +5,7 @@
     <style>
       body {
         width: 250px;
-        height: 80px;
+        height: 150px;
         font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
         text-align: center;
         display: flex;
@@ -27,11 +27,6 @@
       }
 
       button {
-        background: linear-gradient(
-          to right,
-          #4caf50,
-          #2e8b57
-        ); /* Green gradient button */
         color: white;
         padding: 8px 16px;
         border: none;
@@ -44,9 +39,19 @@
           box-shadow 0.2s ease,
           transform 0.1s ease; /* Smooth transitions */
         box-shadow: 2px 2px 5px rgba(0, 0, 0, 0.2);
+        margin: 5px; /* Add some space between buttons */
       }
 
-      button:hover {
+      /* Green Theme (Enabled) */
+      #enable-btn {
+        background: linear-gradient(
+          to right,
+          #4caf50,
+          #2e8b57
+        ); /* Green gradient button */
+      }
+
+      #enable-btn:hover {
         background: linear-gradient(
           to right,
           #2e8b57,
@@ -55,7 +60,7 @@
         box-shadow: 3px 3px 7px rgba(0, 0, 0, 0.3);
       }
 
-      button:active {
+      #enable-btn:active {
         background: linear-gradient(
           to right,
           #1b5e20,
@@ -64,11 +69,40 @@
         box-shadow: 1px 1px 3px rgba(0, 0, 0, 0.1);
         transform: translateY(1px); /* Subtle lift on press */
       }
+
+      /* Red Theme (Disabled) */
+      #disable-btn {
+        background: linear-gradient(
+          to right,
+          #f44336,
+          #d32f2f
+        ); /* Red gradient button */
+      }
+
+      #disable-btn:hover {
+        background: linear-gradient(
+          to right,
+          #d32f2f,
+          #c62828
+        ); /* Darker red on hover */
+        box-shadow: 3px 3px 7px rgba(0, 0, 0, 0.3);
+      }
+
+      #disable-btn:active {
+        background: linear-gradient(
+          to right,
+          #c62828,
+          #b71c1c
+        ); /* Even darker red on press */
+        box-shadow: 1px 1px 3px rgba(0, 0, 0, 0.1);
+        transform: translateY(1px); /* Subtle lift on press */
+      }
     </style>
   </head>
   <body>
     <h3>Keep Me Online</h3>
-    <button id="enable-btn">Pretend Working</button>
+    <button id="enable-btn">Start Pretending</button>
+    <button id="disable-btn">Stop Pretending</button>
     <script src="popup.js"></script>
   </body>
 </html>

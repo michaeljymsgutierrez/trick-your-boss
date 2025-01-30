@@ -1,18 +1,22 @@
-function triggerKeepOnline() {
-  let count = 1
+function enableKeepOnline() {
+  window.localStorage.setItem('keepOnline', 'true')
+}
 
-  setInterval(function () {
-    window.dispatchEvent(new Event('scroll', { bubbles: true }))
+function disableKeepOnline() {
+  window.localStorage.setItem('keepOnline', 'false')
+}
 
-    if (count % 2 === 0) {
-      window.scrollTo({ top: document.body.scrollHeight, behavior: 'smooth' })
-    } else {
-      window.scrollTo({ top: 0, behavior: 'smooth' })
-    }
-    count++
-  }, count * 1000)
+function autoRunViaLastStatus() {
+  console.log('Running auto-run-via-last-status')
+  if (window.localStorage.getItem('keepOnline') === 'true') {
+    setInterval(function () {
+      window.location.reload()
+    }, 3000)
+  }
 }
 
 chrome.runtime.onMessage.addListener(function (request, sender, sendResponse) {
-  if (request.action === 'enableKeepOnline') triggerKeepOnline()
+  if (request.action === 'autoRunViaLastStatus') autoRunViaLastStatus()
+  if (request.action === 'enableKeepOnline') enableKeepOnline()
+  if (request.action === 'disableKeepOnline') disableKeepOnline()
 })
