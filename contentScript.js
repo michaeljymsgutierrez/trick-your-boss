@@ -2,8 +2,7 @@ function triggerKeepOnline() {
   let count = 1
 
   setInterval(function () {
-    const scrollEvent = new Event('scroll', { bubbles: true })
-    window.dispatchEvent(scrollEvent)
+    window.dispatchEvent(new Event('scroll', { bubbles: true }))
 
     if (count % 2 === 0) {
       window.scrollTo({ top: document.body.scrollHeight, behavior: 'smooth' })
