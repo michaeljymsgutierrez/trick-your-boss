@@ -2,9 +2,9 @@ document.addEventListener('DOMContentLoaded', function () {
   const btnEnable = document.getElementById('enable-btn')
   const btnDisable = document.getElementById('disable-btn')
 
-  chrome.tabs.query({ active: true, currentWindow: true }, function (tabs) {
-    chrome.tabs.sendMessage(tabs[0].id, { action: 'autoRunViaLastStatus' })
-  })
+  // chrome.tabs.query({ active: true, currentWindow: true }, function (tabs) {
+  //   chrome.tabs.sendMessage(tabs[0].id, { action: 'autoRunViaLastStatus' })
+  // })
 
   btnEnable.addEventListener('click', function () {
     chrome.tabs.query({ active: true, currentWindow: true }, function (tabs) {
@@ -18,3 +18,10 @@ document.addEventListener('DOMContentLoaded', function () {
     })
   })
 })
+
+// Use this block when running auto refresh
+// chrome.tabs.onUpdated.addListener(function (tabId, changeInfo, tab) {
+//   if (changeInfo.status === 'complete') {
+//     chrome.tabs.sendMessage(tabId, { action: 'autoRunViaLastStatus' })
+//   }
+// })

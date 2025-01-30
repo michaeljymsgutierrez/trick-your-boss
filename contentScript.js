@@ -9,9 +9,9 @@ function disableKeepOnline() {
 function autoRunViaLastStatus() {
   console.log('Running auto-run-via-last-status')
   if (window.localStorage.getItem('keepOnline') === 'true') {
-    setInterval(function () {
-      window.location.reload()
-    }, 3000)
+    // setInterval(function () {
+    //   window.location.reload()
+    // }, 3000)
   }
 }
 
