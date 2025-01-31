@@ -9,11 +9,12 @@ function autoRunViaLastStatus() {
 
 function enableKeepOnline() {
   window.localStorage.setItem('keepOnline', 'true')
-  autoRunViaLastStatus()
+  window.location.reload()
 }
 
 function disableKeepOnline() {
   window.localStorage.setItem('keepOnline', 'false')
+  window.location.reload()
 }
 
 chrome.runtime.onMessage.addListener(function (request, sender, sendResponse) {
