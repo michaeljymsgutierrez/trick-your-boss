@@ -1,11 +1,3 @@
-function enableKeepOnline() {
-  window.localStorage.setItem('keepOnline', 'true')
-}
-
-function disableKeepOnline() {
-  window.localStorage.setItem('keepOnline', 'false')
-}
-
 function autoRunViaLastStatus() {
   console.log('Running auto-run-via-last-status')
   if (window.localStorage.getItem('keepOnline') === 'true') {
@@ -13,6 +5,15 @@ function autoRunViaLastStatus() {
       window.location.reload()
     }, 30 * 1000)
   }
+}
+
+function enableKeepOnline() {
+  window.localStorage.setItem('keepOnline', 'true')
+  autoRunViaLastStatus()
+}
+
+function disableKeepOnline() {
+  window.localStorage.setItem('keepOnline', 'false')
 }
 
 chrome.runtime.onMessage.addListener(function (request, sender, sendResponse) {
