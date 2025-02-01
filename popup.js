@@ -3,6 +3,17 @@ document.addEventListener('DOMContentLoaded', function () {
   const btnDisable = document.getElementById('disable-btn')
 
   chrome.tabs.query({ active: true, currentWindow: true }, function (tabs) {
+    chrome.scripting.executeScript({
+      target: { tabId: tabs[0].id },
+      func: () => {
+        const keepOnlineStatus =
+          window.localStorage.getItem('keepOnline') === 'true'
+        chrome.runtime.sendMessage({
+          action: 'updateButtonStatus',
+          status: keepOnlineStatus,
+        })
+      },
+    })
     chrome.tabs.sendMessage(tabs[0].id, { action: 'autoRunViaLastStatus' })
   })
 
@@ -17,6 +28,21 @@ document.addEventListener('DOMContentLoaded', function () {
       chrome.tabs.sendMessage(tabs[0].id, { action: 'disableKeepOnline' })
     })
   })
+
+  chrome.runtime.onMessage.addListener(
+    function (request, sender, sendResponse) {
+      if (request.action === 'updateButtonStatus') {
+        const keepOnlineStatus = request.status
+        if (keepOnlineStatus) {
+          btnEnable.classList.add('hide-btn')
+          btnDisable.classList.remove('hide-btn')
+        } else {
+          btnEnable.classList.remove('hide-btn')
+          btnDisable.classList.add('hide-btn')
+        }
+      }
+    }
+  )
 })
 
 // Use this block when running auto refresh

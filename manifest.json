@@ -3,7 +3,7 @@
   "name": "Keep Online",
   "version": "1.0",
   "description": "Simulat user interaction to keep system busy",
-  "permissions": ["activeTab"],
+  "permissions": ["activeTab", "storage", "scripting"],
   "action": {
     "default_popup": "popup.html",
     "default_icon": "icon.png"
