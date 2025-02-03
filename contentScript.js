@@ -18,6 +18,8 @@ function disableKeepOnline() {
 }
 
 chrome.runtime.onMessage.addListener(function (request, sender, sendResponse) {
+  window.localStorage.setItem('tabId', sender.id)
+
   if (request.action === 'autoRunViaLastStatus') autoRunViaLastStatus()
   if (request.action === 'enableKeepOnline') enableKeepOnline()
   if (request.action === 'disableKeepOnline') disableKeepOnline()
