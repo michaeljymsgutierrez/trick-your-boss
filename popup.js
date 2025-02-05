@@ -2,20 +2,24 @@ document.addEventListener('DOMContentLoaded', function () {
   const btnEnable = document.getElementById('enable-btn')
   const btnDisable = document.getElementById('disable-btn')
 
-  chrome.tabs.query({ active: true, currentWindow: true }, function (tabs) {
-    chrome.scripting.executeScript({
-      target: { tabId: tabs[0].id },
-      func: () => {
-        const keepOnlineStatus =
-          window.localStorage.getItem('keepOnline') === 'true'
-        chrome.runtime.sendMessage({
-          action: 'updateButtonStatus',
-          status: keepOnlineStatus,
-        })
-      },
+  const initializePlugin = () => {
+    chrome.tabs.query({ active: true, currentWindow: true }, function (tabs) {
+      chrome.scripting.executeScript({
+        target: { tabId: tabs[0].id },
+        func: () => {
+          const keepOnlineStatus =
+            window.localStorage.getItem('keepOnline') === 'true'
+          chrome.runtime.sendMessage({
+            action: 'updateButtonStatus',
+            status: keepOnlineStatus,
+          })
+        },
+      })
+      chrome.tabs.sendMessage(tabs[0].id, { action: 'autoRunViaLastStatus' })
     })
-    chrome.tabs.sendMessage(tabs[0].id, { action: 'autoRunViaLastStatus' })
-  })
+  }
+
+  initializePlugin()
 
   btnEnable.addEventListener('click', function () {
     chrome.tabs.query({ active: true, currentWindow: true }, function (tabs) {
