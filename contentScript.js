@@ -1,17 +1,3 @@
-function toggleButtonStatus(keepOnlineStatus) {
-  chrome.tabs.query({ active: true, currentWindow: true }, function (tabs) {
-    chrome.scripting.executeScript({
-      target: { tabId: tabs[0].id },
-      func: function () {
-        chrome.runtime.sendMessage({
-          action: 'updateButtonStatus',
-          status: keepOnlineStatus,
-        })
-      },
-    })
-  })
-}
-
 function autoRunViaLastStatus(tabId) {
   console.log(`Running auto-run-via-last-status ${tabId}`)
 
@@ -24,13 +10,11 @@ function autoRunViaLastStatus(tabId) {
 }
 
 function enableKeepOnline() {
-  toggleButtonStatus(true)
   window.localStorage.setItem('keepOnline', 'true')
   window.location.reload()
 }
 
 function disableKeepOnline() {
-  toggleButtonStatus(false)
   window.localStorage.setItem('keepOnline', 'false')
   window.location.reload()
 }
