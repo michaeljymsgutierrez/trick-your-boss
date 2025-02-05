@@ -96,3 +96,15 @@ button {
 .hide-btn {
   display: none;
 }
+
+footer {
+  text-align: center;
+  margin-top: 20px;
+  font-size: 0.8em;
+  color: #666; /* Darker gray for footer text */
+}
+
+a {
+  color: #0099ff; /* Slightly darker blue for links */
+  text-decoration: none;
+}
