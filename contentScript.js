@@ -14,6 +14,7 @@ function initializeWatcher() {
   if (window.localStorage.getItem('keepOnline') === 'true') {
     setTimeout(function () {
       if (window.localStorage.getItem('tabId')) {
+        console.log('watcher: reloading')
         window.location.reload()
       }
     }, 30 * 1000)
