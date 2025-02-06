@@ -1,8 +1,8 @@
 {
   "manifest_version": 3,
-  "name": "Keep Online",
+  "name": "Trick your boss",
   "version": "1.0",
-  "description": "Simulat user interaction to keep system busy",
+  "description": "Make youself busy!",
   "permissions": ["activeTab", "storage", "scripting"],
   "action": {
     "default_popup": "popup.html",
