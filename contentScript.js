@@ -13,7 +13,9 @@ function initializeWatcher() {
 
   if (window.localStorage.getItem('keepOnline') === 'true') {
     setTimeout(function () {
-      if (window.localStorage.getItem('tabId')) window.location.reload()
+      if (window.localStorage.getItem('tabId')) {
+        window.location.reload()
+      }
     }, 30 * 1000)
   }
 }
