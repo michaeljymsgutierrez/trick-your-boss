@@ -16,12 +16,14 @@ document.addEventListener('DOMContentLoaded', function () {
 
   btnEnable.addEventListener('click', function () {
     chrome.tabs.query({ active: true, currentWindow: true }, function (tabs) {
+      window.close()
       chrome.tabs.sendMessage(tabs[0].id, { action: 'enableKeepOnline' })
     })
   })
 
   btnDisable.addEventListener('click', function () {
     chrome.tabs.query({ active: true, currentWindow: true }, function (tabs) {
+      window.close()
       chrome.tabs.sendMessage(tabs[0].id, { action: 'disableKeepOnline' })
     })
   })
