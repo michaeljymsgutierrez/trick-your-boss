@@ -6,28 +6,29 @@
   </a>
 </p>
 
-This is a simple Chrome extension that helps you look busy by automatically reloading the current tab every 30 seconds.
+This is a simple Chrome extension that helps you appear active on various web applications, even when you're not. It prevents your status from becoming "idle" or "away" by simulating activity on the page.
 
 ## Table of Contents
 
-- [Features](#features)
-- [How it works](#how-it-works)
+- [What it does](#what-it-does)
+- [Supported Websites](#supported-websites)
 - [How to use it](#how-to-use-it)
 - [Disclaimer](#disclaimer)
 - [Contributing](#contributing)
 - [License](#license)
 
-## Features
+## What it does
 
-- **Auto-Reload:** Automatically reloads the current tab every 30 seconds to simulate activity.
-- **Sleek UI:** A beautiful "glass card" popup design that is easy to use.
+The purpose of this extension is to keep your online presence active on web-based applications. It was originally built to prevent accounts from becoming idle or away. It works by automatically reloading the current tab every 30 seconds, which simulates user activity and keeps your status active.
 
-## How it works
+## Supported Websites
 
-The extension is composed of a content script and a popup.
+This extension is designed to work with the web versions of many popular applications, including:
 
-- The **content script** is injected into the active tab and is responsible for the reloading logic. It uses the browser's local storage to persist the enabled/disabled state.
-- The **popup** provides a user interface with "Start Pretending" and "Stop Pretending" buttons. It communicates with the content script to enable or disable the auto-reloading feature.
+-   Slack
+-   Discord
+-   Microsoft Teams
+-   And any other web app that tracks online presence!
 
 ## How to use it
 
@@ -35,11 +36,13 @@ The extension is composed of a content script and a popup.
 2.  Open Chrome and go to `chrome://extensions`.
 3.  Enable "Developer mode".
 4.  Click on "Load unpacked" and select the `src` directory.
-5.  Click on the extension icon in the toolbar to enable or disable the auto-reloading feature.
+5.  Click on the extension icon in the toolbar to open the popup.
+6.  Click "Start Pretending" to enable the auto-reloading feature.
+7.  Click "Stop Pretending" to disable it.
 
 ## Disclaimer
 
-This extension is for educational purposes only. Use it at your own risk. Your boss might not be amused.
+This extension is for educational and personal purposes only. Use it at your own risk. Be aware of your company's policies regarding the use of such tools. Your boss might not be amused.
 
 ## Contributing
 
