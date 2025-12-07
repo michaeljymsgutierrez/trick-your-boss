@@ -32,10 +32,10 @@ This extension is designed to work with the web versions of many popular applica
 
 ## How to use it
 
-1.  Clone this repository or download the source code.
+1.  **Download from Releases:** You can download the latest `.zip` file from the [Releases page](https://github.com/michaeljymsgutierrez/trick-your-boss/releases). Extract the contents to a folder.
 2.  Open Chrome and go to `chrome://extensions`.
 3.  Enable "Developer mode".
-4.  Click on "Load unpacked" and select the `src` directory.
+4.  Click on "Load unpacked" and select the extracted `src` directory.
 5.  Click on the extension icon in the toolbar to open the popup.
 6.  Click "Start Pretending" to enable the auto-reloading feature.
 7.  Click "Stop Pretending" to disable it.
