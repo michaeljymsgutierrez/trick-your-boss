@@ -1,5 +1,7 @@
 # Trick Your Boss
 
+![Trick Your Boss Screenshot](https://assets-omega-neon.vercel.app/images/trick-your-boss.png)
+
 This is a simple Chrome extension that helps you look busy by automatically reloading the current tab every 30 seconds.
 
 ## Table of Contents
