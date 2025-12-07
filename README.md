@@ -8,6 +8,11 @@
 
 This is a simple Chrome extension that helps you appear active on various web applications, even when you're not. It prevents your status from becoming "idle" or "away" by simulating activity on the page.
 
+
+<p align="center">
+  <video src="https://assets-omega-neon.vercel.app/videos/trick-your-boss-demo.mp4" width="80%"></video>
+</p>
+
 ## Table of Contents
 
 - [What it does](#what-it-does)
