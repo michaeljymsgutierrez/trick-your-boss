@@ -18,8 +18,6 @@ function disableKeepOnline() {
  * Initializes the watcher
  */
 function initializeWatcher() {
-  console.log('watcher: activated')
-
   if (window.localStorage.getItem('keepOnline') === 'true') {
     setTimeout(function () {
       if (window.localStorage.getItem('tabId')) {
