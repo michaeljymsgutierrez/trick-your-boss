@@ -14,6 +14,7 @@ This is a simple Chrome extension that helps you appear active on various web ap
 - [Supported Websites](#supported-websites)
 - [How to use it](#how-to-use-it)
 - [Disclaimer](#disclaimer)
+- [Credits](#credits)
 - [Contributing](#contributing)
 - [License](#license)
 
@@ -43,6 +44,10 @@ This extension is designed to work with the web versions of many popular applica
 ## Disclaimer
 
 This extension is for educational and personal purposes only. Use it at your own risk. Be aware of your company's policies regarding the use of such tools. Your boss might not be amused.
+
+## Credits
+
+- **Axl (skipclass):** Special thanks to [John Axl Asuncion](https://www.linkedin.com/in/john-axl-asuncion-4944a41aa/) for his contributions to this project.
 
 ## Contributing
 
